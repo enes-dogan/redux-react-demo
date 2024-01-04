@@ -1,13 +1,14 @@
 import { createStore } from 'redux';
-import { StateType } from '../../types.ts';
+import { StateType, ActionType } from '../../types.ts';
 
 const counterReducer = (
   state: StateType = { counter: 0 },
-  action: { type: string }
+  action: ActionType = { type: '', amount: 1 }
 ) => {
   switch (action.type) {
     case 'increment':
-      return { counter: state.counter + 1 };
+      if (action.amount === undefined) action.amount = 1;
+      return { counter: state.counter + action.amount };
     case 'decrement':
       return { counter: state.counter - 1 };
     default:

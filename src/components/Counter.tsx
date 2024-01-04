@@ -11,11 +11,14 @@ const Counter = () => {
       <h1>Redux Counter</h1>
       <div className="value">{counter}</div>
       <div>
-        <button onClick={() => dispatch({ type: 'decrement' })}>
-          Decrement
-        </button>
         <button onClick={() => dispatch({ type: 'increment' })}>
           Increment
+        </button>
+        <button onClick={() => dispatch({ type: 'increment', payload: 5 })}>
+          Increment by 5
+        </button>
+        <button onClick={() => dispatch({ type: 'decrement' })}>
+          Decrement
         </button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
