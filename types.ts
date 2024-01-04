@@ -4,5 +4,5 @@ export interface StateType {
 }
 export interface ActionType {
   type: string;
-  amount?: number;
+  payload: number;
 }
