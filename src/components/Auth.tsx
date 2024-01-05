@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { authActions } from '../store';
+import { authActions } from '../store/auth.ts';
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -8,13 +8,8 @@ const Auth = () => {
     event.preventDefault();
 
     const form = event.currentTarget as HTMLFormElement;
-
-    const fd = new FormData(form);
-    const user = Object.fromEntries(fd.entries());
-
-    console.log(user);
-
     form.reset();
+
     dispatch(authActions.login());
   }
 
